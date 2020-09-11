@@ -11,19 +11,19 @@ import com.example.digitslearning.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ReportFragment#newInstance} factory method to
+ * Use the {@link Calculator_Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ReportFragment extends Fragment {
+public class Calculator_Fragment extends Fragment {
 
 
-    public ReportFragment() {
+    public Calculator_Fragment() {
         // Required empty public constructor
     }
 
-    public static ReportFragment newInstance() {
+    public static Calculator_Fragment newInstance() {
 
-        return new ReportFragment();
+        return new Calculator_Fragment();
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ReportFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_report, container, false);
+        View view = inflater.inflate(R.layout.fragment_calculator, container, false);
         return view;
     }
 }

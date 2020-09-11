@@ -1,45 +1,28 @@
-package com.example.digitslearning.utils;
+package com.example.digitslearning.languagesutils;
+
+import com.example.digitslearning.annotations.MAnnotation;
+import com.example.digitslearning.interfaces.Language;
 
 import java.text.DecimalFormat;
 
-public class CHINESENumConverter {
-
+public class SPANISHNumConverter  implements Language {
+    public String[] sNum = new String[]{"cero","ciento","cheon","millón","mil millones",
+            "billón"};
     public final String[] tensNames = {
-            "",
-            " yi-shi",
-            " er-shi",
-            " san-shi",
-            " si-shi",
-            " wu-shi",
-            " liu-shi",
-            " qi-shi",
-            " ba-shi",
-            " jiu-shi",
-     };
+            "", " diez", " veinte", " treinta", " cuarenta", " cincuenta", " sesenta", " setenta",
+            " ochenta",
+            " noventa"
+    };
+
 
     public final String[] numNames = {
-            "",
-            " yi",
-            " er",
-            " san",
-            " si",
-            " wu",
-            " liu",
-            " qi",
-            " ba",
-            " jiu",
-            " shi",
-            " shi-yi",
-            " shi-er",
-            " shi-san",
-            " shi-si",
-            " shi-wu",
-            " shi-liu",
-            " shi-qi",
-            " shi-ba",
-            " shi-jiu"
+            "", " uno", " dos", " tres", " cuatro", " cinco", " seis", " siete", " ocho", " nueve",
+            " diez", " once", " doce", " trece", " catorce", " quince", " dieciséis", " diecisiete",
+            " dieciocho",
+            " diecinueve"
     };
-    public CHINESENumConverter() {}
+
+    public SPANISHNumConverter() {}
 
     public String convertLessThanOneThousand(int number) {
         String soFar;
@@ -56,13 +39,13 @@ public class CHINESENumConverter {
             number /= 10;
         }
         if (number == 0) return soFar;
-        return numNames[number] + "-bai" + soFar;
+        return numNames[number] + " ciento" + soFar;
     }
 
 
     public  String convert(long number) {
         // 0 to 999 999 999 999
-        if (number == 0) { return "líng"; }
+        if (number == 0) { return "cero"; }
 
         String snumber = Long.toString(number);
 
@@ -86,10 +69,10 @@ public class CHINESENumConverter {
                 tradBillions = "";
                 break;
             case 1 :
-                tradBillions = convertLessThanOneThousand(billions) + "-yì ";
+                tradBillions = convertLessThanOneThousand(billions) + "mil millones ";
                 break;
             default :
-                tradBillions = convertLessThanOneThousand(billions) + "-yì ";
+                tradBillions = convertLessThanOneThousand(billions) + " millónes ";
         }
         String result =  tradBillions;
 
@@ -99,10 +82,10 @@ public class CHINESENumConverter {
                 tradMillions = "";
                 break;
             case 1 :
-                tradMillions = convertLessThanOneThousand(millions) + " Bǎi wàn ";
+                tradMillions = convertLessThanOneThousand(millions) + " un millón ";
                 break;
             default :
-                tradMillions = convertLessThanOneThousand(millions) + " Bǎi wàn ";
+                tradMillions = convertLessThanOneThousand(millions) + " millón ";
         }
         result =  result + tradMillions;
 
@@ -112,10 +95,10 @@ public class CHINESENumConverter {
                 tradHundredThousands = "";
                 break;
             case 1 :
-                tradHundredThousands = "yi-qian ";
+                tradHundredThousands = "uno mil ";
                 break;
             default :
-                tradHundredThousands = convertLessThanOneThousand(hundredThousands) + "-qian ";
+                tradHundredThousands = convertLessThanOneThousand(hundredThousands) + " mil ";
         }
         result =  result + tradHundredThousands;
 
@@ -125,5 +108,26 @@ public class CHINESENumConverter {
 
         // remove extra spaces!
         return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
+    }
+
+    @Override
+    public String sNumber(String which) {
+
+        switch (which) {
+            case MAnnotation.ZERO:
+                return sNum[0];
+            case MAnnotation.HUNDRED:
+                return sNum[1];
+            case MAnnotation.THOUSAND:
+                return sNum[2];
+            case MAnnotation.MILLION:
+                return sNum[3];
+            case MAnnotation.BILLION:
+                return sNum[4];
+            case MAnnotation.TRILLION:
+                return sNum[5];
+        }
+        return "";
+
     }
 }

@@ -1,47 +1,26 @@
-package com.example.digitslearning.utils;
+package com.example.digitslearning.languagesutils;
+
+import com.example.digitslearning.annotations.MAnnotation;
+import com.example.digitslearning.interfaces.Language;
 
 import java.text.DecimalFormat;
 
-public class JAPANESENumConverter {
-
-
-
+public class KOREANNumConverter  implements Language {
+    public String[] sNum = new String[]{"jelo","baek","cheon","baegman","sib-eog",
+            "iljo"};
     public final String[] tensNames = {
-            "",
-            " iti-zyuu",
-            " ni-zyuu",
-            " sen-zyuu",
-            " si-zyuu",
-            " go-zyuu",
-            " roku-zyuu",
-            " siti-zyuu",
-            " hati-zyuu",
-            " kyuu-zyuu",
+            "", " ten", " seumul", " seoreun", " maheun", " swin", " yesun", " ilheun",
+            " yeodeun", " aheun"
     };
 
-    public final String[] numNames = {
+
+     public final String[] numNames = {
             "",
-            " iti",
-            " ni",
-            " sen",
-            " si",
-            " go",
-            " roku",
-            " siti",
-            " hati",
-            " kyuu",
-            " zyuu",
-            " zyuu-iti",
-            " zyuu-ni",
-            " zyuu-sen",
-            " zyuu-si",
-            " zyuu-go",
-            " zyuu-roku",
-            " zyuu-siti",
-            " zyuu-hati",
-            " zyuu-kyuu"
+            " hana", " dul", " set", " net", " daseot", " yeoseot", " ilgob", " yeodeol", " ahop",
+            " yeol", " eleven", " twelve", " thirteen", " fourteen", " fifteen", " sixteen",
+             " seventeen", " eighteen", " nineteen"
     };
-    public JAPANESENumConverter() {}
+    public KOREANNumConverter() {}
 
     public String convertLessThanOneThousand(int number) {
         String soFar;
@@ -58,13 +37,13 @@ public class JAPANESENumConverter {
             number /= 10;
         }
         if (number == 0) return soFar;
-        return numNames[number] + "-hyaku" + soFar;
+        return numNames[number] + " baek" + soFar;
     }
 
 
     public  String convert(long number) {
         // 0 to 999 999 999 999
-        if (number == 0) { return "zero"; }
+        if (number == 0) { return "jelo"; }
 
         String snumber = Long.toString(number);
 
@@ -88,10 +67,10 @@ public class JAPANESENumConverter {
                 tradBillions = "";
                 break;
             case 1 :
-                tradBillions = convertLessThanOneThousand(billions) + "-Oku ";
+                tradBillions = convertLessThanOneThousand(billions) + " sib-eog ";
                 break;
             default :
-                tradBillions = convertLessThanOneThousand(billions) + "-Oku ";
+                tradBillions = convertLessThanOneThousand(billions) + " sib-eog ";
         }
         String result =  tradBillions;
 
@@ -101,10 +80,10 @@ public class JAPANESENumConverter {
                 tradMillions = "";
                 break;
             case 1 :
-                tradMillions = convertLessThanOneThousand(millions) + "-hyaku-man ";
+                tradMillions = convertLessThanOneThousand(millions) + " baegman ";
                 break;
             default :
-                tradMillions = convertLessThanOneThousand(millions) + "-hyaku-man ";
+                tradMillions = convertLessThanOneThousand(millions) + " baegman ";
         }
         result =  result + tradMillions;
 
@@ -114,10 +93,10 @@ public class JAPANESENumConverter {
                 tradHundredThousands = "";
                 break;
             case 1 :
-                tradHundredThousands = "-iti-sen ";
+                tradHundredThousands = "hana cheon ";
                 break;
             default :
-                tradHundredThousands = convertLessThanOneThousand(hundredThousands) + "-sen ";
+                tradHundredThousands = convertLessThanOneThousand(hundredThousands) + " cheon ";
         }
         result =  result + tradHundredThousands;
 
@@ -127,5 +106,25 @@ public class JAPANESENumConverter {
 
         // remove extra spaces!
         return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
+    }
+    @Override
+    public String sNumber(String which) {
+
+        switch (which) {
+            case MAnnotation.ZERO:
+                return sNum[0];
+            case MAnnotation.HUNDRED:
+                return sNum[1];
+            case MAnnotation.THOUSAND:
+                return sNum[2];
+            case MAnnotation.MILLION:
+                return sNum[3];
+            case MAnnotation.BILLION:
+                return sNum[4];
+            case MAnnotation.TRILLION:
+                return sNum[5];
+        }
+        return "";
+
     }
 }

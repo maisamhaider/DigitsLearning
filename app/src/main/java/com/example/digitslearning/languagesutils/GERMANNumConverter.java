@@ -1,45 +1,50 @@
-package com.example.digitslearning.utils;
+package com.example.digitslearning.languagesutils;
+
+import com.example.digitslearning.annotations.MAnnotation;
+import com.example.digitslearning.interfaces.Language;
 
 import java.text.DecimalFormat;
 
-public class ENGLISHNumConverter {
+public class GERMANNumConverter  implements Language {
+    public String[] sNum = new String[]{"Null","hundert","tausend","million","Milliarde"
+            ,"billion"};
 
     public final String[] tensNames = {
             "",
-            " ten",
-            " twenty",
-            " thirty",
-            " forty",
-            " fifty",
-            " sixty",
-            " seventy",
-            " eighty",
-            " ninety"
+            " zehn",
+            " zwanzig",
+            " dreiBig",
+            " vierzig",
+            " funfzig",
+            " sechzig",
+            " siebzig",
+            " achtzig",
+            " neunzig"
     };
 
     public final String[] numNames = {
             "",
-            " one",
-            " two",
-            " three",
-            " four",
-            " five",
-            " six",
-            " seven",
-            " eight",
-            " nine",
-            " ten",
-            " eleven",
-            " twelve",
-            " thirteen",
-            " fourteen",
-            " fifteen",
-            " sixteen",
-            " seventeen",
-            " eighteen",
-            " nineteen"
+            " eins",
+            " zwei",
+            " drei",
+            " vier",
+            " funf",
+            " sechs",
+            " sieben",
+            " acht",
+            " neun",
+            " zehn",
+            " elf",
+            " zwolf",
+            " dreizehn",
+            " vierzehn",
+            " funfzehn",
+            " sechzehn",
+            " siebzehn",
+            " achtzehn",
+            " neunzehn"
     };
-    public ENGLISHNumConverter() {}
+    public GERMANNumConverter() {}
 
     public String convertLessThanOneThousand(int number) {
         String soFar;
@@ -56,13 +61,13 @@ public class ENGLISHNumConverter {
             number /= 10;
         }
         if (number == 0) return soFar;
-        return numNames[number] + " hundred" + soFar;
+        return numNames[number] + " hundert" + soFar;
     }
 
 
     public  String convert(long number) {
         // 0 to 999 999 999 999
-        if (number == 0) { return "zero"; }
+        if (number == 0) { return "Null"; }
 
         String snumber = Long.toString(number);
 
@@ -86,10 +91,10 @@ public class ENGLISHNumConverter {
                 tradBillions = "";
                 break;
             case 1 :
-                tradBillions = convertLessThanOneThousand(billions) + " billion ";
+                tradBillions = convertLessThanOneThousand(billions) + " Milliarde ";
                 break;
             default :
-                tradBillions = convertLessThanOneThousand(billions) + " billion ";
+                tradBillions = convertLessThanOneThousand(billions) + " Milliarde ";
         }
         String result =  tradBillions;
 
@@ -112,10 +117,10 @@ public class ENGLISHNumConverter {
                 tradHundredThousands = "";
                 break;
             case 1 :
-                tradHundredThousands = "one thousand ";
+                tradHundredThousands = "eins tausend ";
                 break;
             default :
-                tradHundredThousands = convertLessThanOneThousand(hundredThousands) + " thousand ";
+                tradHundredThousands = convertLessThanOneThousand(hundredThousands) + " tausend ";
         }
         result =  result + tradHundredThousands;
 
@@ -125,5 +130,25 @@ public class ENGLISHNumConverter {
 
         // remove extra spaces!
         return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
+    }
+    @Override
+    public String sNumber(String which) {
+
+        switch (which) {
+            case MAnnotation.ZERO:
+                return sNum[0];
+            case MAnnotation.HUNDRED:
+                return sNum[1];
+            case MAnnotation.THOUSAND:
+                return sNum[2];
+            case MAnnotation.MILLION:
+                return sNum[3];
+            case MAnnotation.BILLION:
+                return sNum[4];
+            case MAnnotation.TRILLION:
+                return sNum[5];
+        }
+        return "";
+
     }
 }

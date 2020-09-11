@@ -1,43 +1,22 @@
-package com.example.digitslearning.utils;
+package com.example.digitslearning.languagesutils;
+
+import com.example.digitslearning.annotations.MAnnotation;
+import com.example.digitslearning.interfaces.Language;
 
 import java.text.DecimalFormat;
 
-public class ITALIANNumConverter {
-
+public class ITALIANNumConverter  implements Language {
+    public String[] sNum = new String[]{"zero","cento","mille","milioni","miliardi",
+            "trilioni"};
     public final String[] tensNames = {
-            "",
-            " dieci",
-            " venti",
-            " trenta",
-            " quaranta",
-            " cinquanta",
-            " sessanta",
-            " settanta",
-            " ottanta",
-            " novanta"
+            "", " dieci", " venti", " trenta", " quaranta", " cinquanta", " sessanta",
+            " settanta", " ottanta", " novanta"
     };
 
     public final String[] numNames = {
-            "",
-            " uno",
-            " due",
-            " tre",
-            " quattro",
-            " cinque",
-            " sei",
-            " sette",
-            " otto",
-            " nove",
-            " dieci",
-            " undici",
-            " dodici",
-            " tredici",
-            " quattordici",
-            " quindici",
-            " sedici",
-            " dicissette",
-            " diciotto",
-            " diciannove"
+            "", " uno", " due", " tre", " quattro", " cinque", " sei", " sette", " otto",
+            " nove", " dieci", " undici", " dodici", " tredici", " quattordici", " quindici",
+            " sedici", " dicissette", " diciotto", " diciannove"
     };
     public ITALIANNumConverter() {}
 
@@ -125,5 +104,25 @@ public class ITALIANNumConverter {
 
         // remove extra spaces!
         return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
+    }
+    @Override
+    public String sNumber(String which) {
+
+        switch (which) {
+            case MAnnotation.ZERO:
+                return sNum[0];
+            case MAnnotation.HUNDRED:
+                return sNum[1];
+            case MAnnotation.THOUSAND:
+                return sNum[2];
+            case MAnnotation.MILLION:
+                return sNum[3];
+            case MAnnotation.BILLION:
+                return sNum[4];
+            case MAnnotation.TRILLION:
+                return sNum[5];
+        }
+        return "";
+
     }
 }

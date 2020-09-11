@@ -1,46 +1,50 @@
-package com.example.digitslearning.utils;
+package com.example.digitslearning.languagesutils;
+
+import com.example.digitslearning.annotations.MAnnotation;
+import com.example.digitslearning.interfaces.Language;
 
 import java.text.DecimalFormat;
 
-public class FRENCHNumConverter {
+public class HEBREWNumConverter  implements Language {
 
+    public String[] sNum = new String[]{"efes","me'a","elef","meelyon","beelyon",
+            "treelyon"};
     public final String[] tensNames = {
             "",
-            " dix",
-            " vingt",
-            " trente",
-            " quarante",
-            " cinquante",
-            " soixante",
-            " soixante-dix",
-            " quatre-vingts",
-            "  quatre-vingt-dix"
-
+            " assara",
+            " esrim",
+            " shiloshim",
+            " arba'im",
+            " chamishim",
+            " shishim",
+            " shiv'im",
+            " shimonim",
+            " tish'im"
     };
 
     public final String[] numNames = {
             "",
-            " un",
-            " deux",
-            " trois",
-            " quatre",
-            " cinq",
-            " six",
-            " sept",
-            " huit",
-            " neuf",
-            " dix",
-            " onze",
-            " douze",
-            " treize",
-            " quatorze",
-            " quinze",
-            " seize",
-            " dix-sept",
-            " dix-huit",
-            " dix-neuf"
+            " echad",
+            " shinayim",
+            " sheloshah",
+            " arba'a",
+            " chameeshah",
+            " sheeshah ",
+            " sheevah",
+            " shemonah",
+            " teeshah",
+            " assara",
+            " achad asar",
+            " shineim asar",
+            " shlosha asar",
+            " arba'a asar",
+            " chamisha asar",
+            " shisha asar",
+            " shiv'a asar",
+            " shimona asar",
+            " tish'a asar"
     };
-    public FRENCHNumConverter() {}
+    public HEBREWNumConverter() {}
 
     public String convertLessThanOneThousand(int number) {
         String soFar;
@@ -57,13 +61,13 @@ public class FRENCHNumConverter {
             number /= 10;
         }
         if (number == 0) return soFar;
-        return numNames[number] + " cent" + soFar;
+        return numNames[number] + " me'a" + soFar;
     }
 
 
     public  String convert(long number) {
         // 0 to 999 999 999 999
-        if (number == 0) { return "zero"; }
+        if (number == 0) { return "efes"; }
 
         String snumber = Long.toString(number);
 
@@ -87,10 +91,10 @@ public class FRENCHNumConverter {
                 tradBillions = "";
                 break;
             case 1 :
-                tradBillions = convertLessThanOneThousand(billions) + " milliard ";
+                tradBillions = convertLessThanOneThousand(billions) + " beelyon ";
                 break;
             default :
-                tradBillions = convertLessThanOneThousand(billions) + " milliard ";
+                tradBillions = convertLessThanOneThousand(billions) + " beelyon ";
         }
         String result =  tradBillions;
 
@@ -100,10 +104,10 @@ public class FRENCHNumConverter {
                 tradMillions = "";
                 break;
             case 1 :
-                tradMillions = convertLessThanOneThousand(millions) + " million ";
+                tradMillions = convertLessThanOneThousand(millions) + " meelyon ";
                 break;
             default :
-                tradMillions = convertLessThanOneThousand(millions) + " million ";
+                tradMillions = convertLessThanOneThousand(millions) + " meelyon ";
         }
         result =  result + tradMillions;
 
@@ -113,10 +117,10 @@ public class FRENCHNumConverter {
                 tradHundredThousands = "";
                 break;
             case 1 :
-                tradHundredThousands = "un mille ";
+                tradHundredThousands = "echad elef ";
                 break;
             default :
-                tradHundredThousands = convertLessThanOneThousand(hundredThousands) + " mille ";
+                tradHundredThousands = convertLessThanOneThousand(hundredThousands) + " elef ";
         }
         result =  result + tradHundredThousands;
 
@@ -126,5 +130,25 @@ public class FRENCHNumConverter {
 
         // remove extra spaces!
         return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
+    }
+    @Override
+    public String sNumber(String which) {
+
+        switch (which) {
+            case MAnnotation.ZERO:
+                return sNum[0];
+            case MAnnotation.HUNDRED:
+                return sNum[1];
+            case MAnnotation.THOUSAND:
+                return sNum[2];
+            case MAnnotation.MILLION:
+                return sNum[3];
+            case MAnnotation.BILLION:
+                return sNum[4];
+            case MAnnotation.TRILLION:
+                return sNum[5];
+        }
+        return "";
+
     }
 }

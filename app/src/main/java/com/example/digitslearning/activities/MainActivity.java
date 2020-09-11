@@ -11,7 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.digitslearning.R;
 import com.example.digitslearning.fragments.HomeFragment;
-import com.example.digitslearning.fragments.ReportFragment;
+import com.example.digitslearning.fragments.Calculator_Fragment;
 import com.example.digitslearning.fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                         loadFrag(HomeFragment.newInstance());
                         break;
                     case R.id.report_item:
-                        loadFrag(ReportFragment.newInstance());
+                        loadFrag(Calculator_Fragment.newInstance());
                         break;
                     case R.id.settings_item:
                         loadFrag(SettingsFragment.newInstance());

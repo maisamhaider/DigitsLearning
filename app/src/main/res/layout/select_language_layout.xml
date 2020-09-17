@@ -7,7 +7,7 @@
     android:layout_height="400dp">
 
     <TextView
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:paddingStart="10dp"
         android:gravity="center|start"
         android:id="@+id/textView"
@@ -29,7 +29,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
         android:gravity="center"
         android:text="Done"
@@ -38,7 +38,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="5dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@drawable/flat_button_ripple_bg"
          app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

@@ -1,6 +1,5 @@
 package com.example.digitslearning.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,13 +13,10 @@ import com.example.digitslearning.R;
 import com.example.digitslearning.activities.CustomNumbersActivity;
 import com.example.digitslearning.activities.NumbersActivity;
 import com.example.digitslearning.activities.SpecialNumbersActivity;
+import com.example.digitslearning.annotations.MAnnotation;
 import com.example.digitslearning.interfaces.TextChanged;
 import com.example.digitslearning.prefrences.MyPreferences;
-
-import static com.example.digitslearning.annotations.MAnnotation.ELEVEN_TO_19;
-import static com.example.digitslearning.annotations.MAnnotation.ONE_TO_9;
-import static com.example.digitslearning.annotations.MAnnotation.TEN_TO_90;
-import static com.example.digitslearning.annotations.MAnnotation.WHICH_NUMBERS;
+import com.google.android.gms.ads.AdView;
 
 
 public class HomeFragment extends BaseFrag {
@@ -50,6 +46,8 @@ public class HomeFragment extends BaseFrag {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         preferences = new MyPreferences(getContext());
 
+        AdView aView = view.findViewById(R.id.homeFrag_adView);
+        adView(aView);
         sSelected_language_tv = view.findViewById(R.id.sSelected_language_tv);
         ImageView home_lang_change_iv = view.findViewById(R.id.home_lang_change_iv);
         sNameOfLang(sSelected_language_tv);
@@ -62,39 +60,34 @@ public class HomeFragment extends BaseFrag {
         one_to_nine_cl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), NumbersActivity.class);
-                intent.putExtra(WHICH_NUMBERS, ONE_TO_9);
-                getContext().startActivity(intent);
+                newActivityAds(new NumbersActivity(), MAnnotation.WHICH_NUMBERS,
+                        MAnnotation.ONE_TO_9);
             }
         });
         eleven_to_nineteen_cl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), NumbersActivity.class);
-                intent.putExtra(WHICH_NUMBERS, ELEVEN_TO_19);
-                getContext().startActivity(intent);
+                newActivityAds(new NumbersActivity(), MAnnotation.WHICH_NUMBERS,
+                        MAnnotation.ELEVEN_TO_19);
             }
         });
         ten_to_ninety_cl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), NumbersActivity.class);
-                intent.putExtra(WHICH_NUMBERS, TEN_TO_90);
-                getContext().startActivity(intent);
+                newActivityAds(new NumbersActivity(), MAnnotation.WHICH_NUMBERS,
+                        MAnnotation.TEN_TO_90);
             }
         });
         specialNumbers_cl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), SpecialNumbersActivity.class);
-                getContext().startActivity(intent);
+                newActivityAds(new SpecialNumbersActivity());
             }
         });
         customInput_cl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), CustomNumbersActivity.class);
-                getContext().startActivity(intent);
+                newActivityAds(new CustomNumbersActivity());
             }
         });
         home_lang_change_iv.setOnClickListener(new View.OnClickListener() {
@@ -113,5 +106,6 @@ public class HomeFragment extends BaseFrag {
 
         return view;
     }
+
 
 }

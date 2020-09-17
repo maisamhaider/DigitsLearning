@@ -2,7 +2,6 @@ package com.example.digitslearning.activities;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,16 +22,21 @@ public class CustomNumbersActivity extends BaseActivity {
         TextView customActSLang_mtv = findViewById(R.id.customActSLang_mtv);
         final TextView result_mTv = findViewById(R.id.result_mTv);
         final ImageView custom_num_speak_iv = findViewById(R.id.custom_num_speak_iv);
-        Button convertNumber_mBtn = findViewById(R.id.convertNumber_mBtn);
+        TextView convertNumber_tv = findViewById(R.id.convertNumber_tv);
 
         String sLanguage = preferences.getStringData(MAnnotation.S_LANGUAGE_KEY);
         customActSLang_mtv.setText(sLanguage);
 
-        convertNumber_mBtn.setOnClickListener(new View.OnClickListener() {
+        convertNumber_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                long num = Long.parseLong(inputNumber_mEt.getText().toString());
-                result_mTv.setText(converterObj.convert(num));
+                if (!inputNumber_mEt.getText().toString().matches(""))
+                {
+                    long num = Long.parseLong(inputNumber_mEt.getText().toString());
+                    result_mTv.setText(converterObj.convert(num));
+                    custom_num_speak_iv.setVisibility(View.VISIBLE);
+
+                }
             }
         });
         custom_num_speak_iv.setOnClickListener(new View.OnClickListener() {
@@ -42,5 +46,6 @@ public class CustomNumbersActivity extends BaseActivity {
                 speakNum(numWord);
             }
         });
+
     }
 }

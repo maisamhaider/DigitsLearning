@@ -19,8 +19,14 @@ public class MyPreferences {
     public void setData(String data, String key) {
         editor.putString(key, data).commit();
     }
+    public void setData(boolean data, String key) {
+        editor.putBoolean(key, data).commit();
+    }
  public String getStringData(String key) {
      return sharedPreferences.getString(key, MAnnotation.ENGLISH);
+ }
+ public boolean getBooleanData(String key) {
+     return sharedPreferences.getBoolean(key, false);
  }
 
 }

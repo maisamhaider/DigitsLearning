@@ -15,6 +15,12 @@ public @interface MAnnotation {
       String LATIN = "LATIN";
       String SPANISH = "SPANISH";
 
+      String S_Extra_LANGUAGE_KEY = "S_Extra_LANGUAGE_KEY";
+      String ARABIC = "ARABIC";
+      String PERSIAN = "PERSIAN";
+      String URDU = "URDU";
+      String PAKHTU = "PAKHTU";
+
       //intents keys
        String WHICH_NUMBERS = "WHICH_NUMBER";
       String ONE_TO_9 = "1_9";
@@ -27,5 +33,6 @@ public @interface MAnnotation {
       String MILLION = "MILLION";
       String BILLION = "BILLION";
       String TRILLION = "TRILLION";
+
 
 }

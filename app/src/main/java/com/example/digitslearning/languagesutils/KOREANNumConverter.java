@@ -9,16 +9,15 @@ public class KOREANNumConverter  implements Language {
     public String[] sNum = new String[]{"jelo","baek","cheon","baegman","sib-eog",
             "iljo"};
     public final String[] tensNames = {
-            "", " ten", " seumul", " seoreun", " maheun", " swin", " yesun", " ilheun",
+            "", " yeol", " seumul", " seoreun", " maheun", " swin", " yesun", " ilheun",
             " yeodeun", " aheun"
     };
-
 
      public final String[] numNames = {
             "",
             " hana", " dul", " set", " net", " daseot", " yeoseot", " ilgob", " yeodeol", " ahop",
-            " yeol", " eleven", " twelve", " thirteen", " fourteen", " fifteen", " sixteen",
-             " seventeen", " eighteen", " nineteen"
+            " yeol", " yeolhana", " yeoldul", " yeolset", " yeolnet", " yeoldaseot", " yeolyeoseot",
+             " yeolilgop", " yeolyeodeol", " yeolahop"
     };
     public KOREANNumConverter() {}
 
@@ -37,7 +36,7 @@ public class KOREANNumConverter  implements Language {
             number /= 10;
         }
         if (number == 0) return soFar;
-        return numNames[number] + " baek" + soFar;
+        return numNames[number] + " on" + soFar;
     }
 
 
@@ -80,10 +79,10 @@ public class KOREANNumConverter  implements Language {
                 tradMillions = "";
                 break;
             case 1 :
-                tradMillions = convertLessThanOneThousand(millions) + " baegman ";
+                tradMillions = convertLessThanOneThousand(millions) + " baekman ";
                 break;
             default :
-                tradMillions = convertLessThanOneThousand(millions) + " baegman ";
+                tradMillions = convertLessThanOneThousand(millions) + " baekman ";
         }
         result =  result + tradMillions;
 
@@ -93,10 +92,10 @@ public class KOREANNumConverter  implements Language {
                 tradHundredThousands = "";
                 break;
             case 1 :
-                tradHundredThousands = "hana cheon ";
+                tradHundredThousands = "hana jeumeun ";
                 break;
             default :
-                tradHundredThousands = convertLessThanOneThousand(hundredThousands) + " cheon ";
+                tradHundredThousands = convertLessThanOneThousand(hundredThousands) + " jeumeun ";
         }
         result =  result + tradHundredThousands;
 

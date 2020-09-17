@@ -9,6 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.digitslearning.R;
 import com.example.digitslearning.annotations.MAnnotation;
+import com.google.android.gms.ads.AdView;
 
 
 public class NumbersActivity extends BaseActivity implements View.OnClickListener {
@@ -21,7 +22,8 @@ public class NumbersActivity extends BaseActivity implements View.OnClickListene
         setContentView(R.layout.activity_numbers);
         initActiveConverter();
         WHICH_NUMBERS = getIntent().getStringExtra(MAnnotation.WHICH_NUMBERS);
-
+        AdView aView = findViewById(R.id.numberAct_adView);
+        adView(aView);
         TextView targetWordNum_tv1 = findViewById(R.id.targetWordNum_tv1);
         TextView targetWordNum_tv2 = findViewById(R.id.targetWordNum_tv2);
         TextView targetWordNum_tv3 = findViewById(R.id.targetWordNum_tv3);
@@ -31,6 +33,7 @@ public class NumbersActivity extends BaseActivity implements View.OnClickListene
         TextView targetWordNum_tv7 = findViewById(R.id.targetWordNum_tv7);
         TextView targetWordNum_tv8 = findViewById(R.id.targetWordNum_tv8);
         TextView targetWordNum_tv9 = findViewById(R.id.targetWordNum_tv9);
+        TextView thisToThat_tv = findViewById(R.id.thisToThat_tv);
 
         ConstraintLayout cl1 = findViewById(R.id.cl1);
         ConstraintLayout cl2 = findViewById(R.id.cl2);
@@ -53,42 +56,42 @@ public class NumbersActivity extends BaseActivity implements View.OnClickListene
         TextView tv9 = findViewById(R.id.tv9);
 
 
-        if (WHICH_NUMBERS.matches(MAnnotation.ONE_TO_9))
-        {
+        if (WHICH_NUMBERS.matches(MAnnotation.ONE_TO_9)) {
             OneTo9Fun(targetWordNum_tv1);
             OneTo9Fun(targetWordNum_tv2);
             OneTo9Fun(targetWordNum_tv3);
             OneTo9Fun(targetWordNum_tv4);
             OneTo9Fun(targetWordNum_tv5);
-            OneTo9Fun(targetWordNum_tv9);
             OneTo9Fun(targetWordNum_tv6);
             OneTo9Fun(targetWordNum_tv7);
             OneTo9Fun(targetWordNum_tv8);
+            OneTo9Fun(targetWordNum_tv9);
+            thisToThat_tv.setText("1 to 9");
 
-        }
-        else if (WHICH_NUMBERS.matches(MAnnotation.ELEVEN_TO_19))
-        {
-            ElevenTo19Fun(targetWordNum_tv1,tv1);
-            ElevenTo19Fun(targetWordNum_tv2,tv2);
-            ElevenTo19Fun(targetWordNum_tv3,tv3);
-            ElevenTo19Fun(targetWordNum_tv4,tv4);
-            ElevenTo19Fun(targetWordNum_tv5,tv5);
-            ElevenTo19Fun(targetWordNum_tv9,tv6);
-            ElevenTo19Fun(targetWordNum_tv6,tv7);
-            ElevenTo19Fun(targetWordNum_tv7,tv8);
-            ElevenTo19Fun(targetWordNum_tv8,tv9);
+        } else if (WHICH_NUMBERS.matches(MAnnotation.ELEVEN_TO_19)) {
+            ElevenTo19Fun(targetWordNum_tv1, tv1);
+            ElevenTo19Fun(targetWordNum_tv2, tv2);
+            ElevenTo19Fun(targetWordNum_tv3, tv3);
+            ElevenTo19Fun(targetWordNum_tv4, tv4);
+            ElevenTo19Fun(targetWordNum_tv5, tv5);
+            ElevenTo19Fun(targetWordNum_tv6, tv6);
+            ElevenTo19Fun(targetWordNum_tv7, tv7);
+            ElevenTo19Fun(targetWordNum_tv8, tv8);
+            ElevenTo19Fun(targetWordNum_tv9, tv9);
+            thisToThat_tv.setText("11 to 19");
 
-        } else if (WHICH_NUMBERS.matches(MAnnotation.TEN_TO_90))
-        {
-            TenTo90(targetWordNum_tv1,tv1);
-            TenTo90(targetWordNum_tv2,tv2);
-            TenTo90(targetWordNum_tv3,tv3);
-            TenTo90(targetWordNum_tv4,tv4);
-            TenTo90(targetWordNum_tv5,tv5);
-            TenTo90(targetWordNum_tv9,tv6);
-            TenTo90(targetWordNum_tv6,tv7);
-            TenTo90(targetWordNum_tv7,tv8);
-            TenTo90(targetWordNum_tv8,tv9);
+
+        } else if (WHICH_NUMBERS.matches(MAnnotation.TEN_TO_90)) {
+            TenTo90(targetWordNum_tv1, tv1);
+            TenTo90(targetWordNum_tv2, tv2);
+            TenTo90(targetWordNum_tv3, tv3);
+            TenTo90(targetWordNum_tv4, tv4);
+            TenTo90(targetWordNum_tv5, tv5);
+            TenTo90(targetWordNum_tv6, tv6);
+            TenTo90(targetWordNum_tv7, tv7);
+            TenTo90(targetWordNum_tv8, tv8);
+            TenTo90(targetWordNum_tv9, tv9);
+            thisToThat_tv.setText("10 to 90");
         }
 
         cl1.setOnClickListener(this);
@@ -102,8 +105,7 @@ public class NumbersActivity extends BaseActivity implements View.OnClickListene
         cl9.setOnClickListener(this);
     }
 
-    public void OneTo9Fun(TextView view)
-    {
+    public void OneTo9Fun(TextView view) {
         switch (view.getId()) {
             case R.id.targetWordNum_tv1:
                 view.setText(converterObj.convert(1));
@@ -179,8 +181,7 @@ public class NumbersActivity extends BaseActivity implements View.OnClickListene
     }
 
     @SuppressLint("SetTextI18n")
-    public void TenTo90(TextView viewNumWords, TextView viewNum)
-    {
+    public void TenTo90(TextView viewNumWords, TextView viewNum) {
         switch (viewNumWords.getId()) {
             case R.id.targetWordNum_tv1:
                 viewNumWords.setText(converterObj.convert(10));
@@ -223,16 +224,15 @@ public class NumbersActivity extends BaseActivity implements View.OnClickListene
     }
 
 
-
     @Override
     public void onClick(View view) {
         if (WHICH_NUMBERS.matches(MAnnotation.ONE_TO_9)) {
             switch (view.getId()) {
                 case R.id.cl1:
-                    speakNum(converterObj.convert(1));
+                    adOnNumClick(1);
                     break;
                 case R.id.cl2:
-                    speakNum(converterObj.convert(2));
+                    adOnNumClick(2);
                     break;
                 case R.id.cl3:
                     speakNum(converterObj.convert(3));
@@ -241,32 +241,32 @@ public class NumbersActivity extends BaseActivity implements View.OnClickListene
                     speakNum(converterObj.convert(4));
                     break;
                 case R.id.cl5:
-                    speakNum(converterObj.convert(5));
+                    adOnNumClick(5);
                     break;
                 case R.id.cl6:
                     speakNum(converterObj.convert(6));
                     break;
                 case R.id.cl7:
-                    speakNum(converterObj.convert(7));
+                    adOnNumClick(7);
                     break;
                 case R.id.cl8:
-                    speakNum(converterObj.convert(8));
+                    adOnNumClick(8);
                     break;
                 case R.id.cl9:
                     speakNum(converterObj.convert(9));
                     break;
             }
 
-        } else if (WHICH_NUMBERS.matches(MAnnotation.ELEVEN_TO_19)){
+        } else if (WHICH_NUMBERS.matches(MAnnotation.ELEVEN_TO_19)) {
             switch (view.getId()) {
                 case R.id.cl1:
-                    speakNum(converterObj.convert(11));
+                    adOnNumClick(11);
                     break;
                 case R.id.cl2:
                     speakNum(converterObj.convert(12));
                     break;
                 case R.id.cl3:
-                    speakNum(converterObj.convert(13));
+                    adOnNumClick(13);
                     break;
                 case R.id.cl4:
                     speakNum(converterObj.convert(14));
@@ -275,27 +275,25 @@ public class NumbersActivity extends BaseActivity implements View.OnClickListene
                     speakNum(converterObj.convert(15));
                     break;
                 case R.id.cl6:
-                    speakNum(converterObj.convert(16));
+                    adOnNumClick(16);
                     break;
                 case R.id.cl7:
                     speakNum(converterObj.convert(17));
                     break;
                 case R.id.cl8:
-                    speakNum(converterObj.convert(18));
+                    adOnNumClick(18);
                     break;
                 case R.id.cl9:
                     speakNum(converterObj.convert(19));
                     break;
             }
-        }
-        else if (WHICH_NUMBERS.matches(MAnnotation.TEN_TO_90))
-        {
+        } else if (WHICH_NUMBERS.matches(MAnnotation.TEN_TO_90)) {
             switch (view.getId()) {
                 case R.id.cl1:
                     speakNum(converterObj.convert(10));
                     break;
                 case R.id.cl2:
-                    speakNum(converterObj.convert(20));
+                    adOnNumClick(20);
                     break;
                 case R.id.cl3:
                     speakNum(converterObj.convert(30));
@@ -304,16 +302,16 @@ public class NumbersActivity extends BaseActivity implements View.OnClickListene
                     speakNum(converterObj.convert(40));
                     break;
                 case R.id.cl5:
-                    speakNum(converterObj.convert(50));
+                    adOnNumClick(50);
                     break;
                 case R.id.cl6:
-                    speakNum(converterObj.convert(60));
+                    adOnNumClick(60);
                     break;
                 case R.id.cl7:
                     speakNum(converterObj.convert(70));
                     break;
                 case R.id.cl8:
-                    speakNum(converterObj.convert(80));
+                    adOnNumClick(80);
                     break;
                 case R.id.cl9:
                     speakNum(converterObj.convert(90));

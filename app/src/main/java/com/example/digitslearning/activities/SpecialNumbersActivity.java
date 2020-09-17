@@ -74,22 +74,22 @@ public class SpecialNumbersActivity extends BaseActivity implements View.OnClick
         switch (view.getId())
         {
             case R.id.cl0:
-                speakNum(converterObj.sNumber(MAnnotation.ZERO));
+                adOnNumClick(converterObj.sNumber(MAnnotation.ZERO));
                 break;
             case R.id.cl100:
                 speakNum(converterObj.sNumber(MAnnotation.HUNDRED));
                 break;
             case R.id.cl1000:
-                speakNum(converterObj.sNumber(MAnnotation.THOUSAND));
+                adOnNumClick(converterObj.sNumber(MAnnotation.THOUSAND));
                 break;
             case R.id.million_cl:
-                speakNum(converterObj.sNumber(MAnnotation.MILLION));
+                adOnNumClick(converterObj.sNumber(MAnnotation.MILLION));
                 break;
             case R.id.billion_cl:
                 speakNum(converterObj.sNumber(MAnnotation.BILLION));
                 break;
             case R.id.trillion_cl:
-                speakNum(converterObj.sNumber(MAnnotation.TRILLION));
+                adOnNumClick(converterObj.sNumber(MAnnotation.TRILLION));
                 break;
         }
     }

@@ -32,12 +32,25 @@
             android:layout_marginStart="8dp"
             android:text="thisTothat"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView"
             app:layout_constraintVertical_bias="0.523" />
+
+        <TextView
+            android:id="@+id/numSLang_tv"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fresh"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -49,9 +62,9 @@
         app:layout_constraintGuide_percent="0.12" />
 
     <ScrollView
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+         app:layout_constraintBottom_toTopOf="@+id/numberAct_adView"
         app:layout_constraintTop_toTopOf="@+id/guideline6">
 
 
@@ -66,8 +79,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -75,7 +88,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
@@ -87,7 +100,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl1"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="@drawable/numbers_ripple_bg">
 
@@ -107,14 +120,16 @@
 
                         <TextView
                             android:id="@+id/targetWordNum_tv1"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/one"
                             android:textColor="@android:color/white"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@+id/tv1"
-                            app:layout_constraintStart_toStartOf="@+id/tv1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv1"
                             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -124,6 +139,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:src="@drawable/ic_baseline_volume_up"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
@@ -135,7 +151,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
@@ -147,7 +163,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl2"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="@drawable/numbers_ripple_bg">
 
@@ -167,14 +183,16 @@
 
                         <TextView
                             android:id="@+id/targetWordNum_tv2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/two"
                             android:textColor="@android:color/white"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@+id/tv2"
-                            app:layout_constraintStart_toStartOf="@+id/tv2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv2"
                             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -184,6 +202,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:src="@drawable/ic_baseline_volume_up"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
@@ -195,7 +214,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
@@ -207,7 +226,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl3"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="@drawable/numbers_ripple_bg">
 
@@ -227,14 +246,16 @@
 
                         <TextView
                             android:id="@+id/targetWordNum_tv3"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/three"
                             android:textColor="@android:color/white"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@+id/tv3"
-                            app:layout_constraintStart_toStartOf="@+id/tv3"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv3"
                             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -244,6 +265,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:src="@drawable/ic_baseline_volume_up"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
@@ -258,9 +280,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="3dp"
-                android:layout_marginEnd="5dp"
                 android:layout_marginBottom="3dp"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
@@ -269,7 +291,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
@@ -281,7 +303,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl4"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="@drawable/numbers_ripple_bg">
 
@@ -301,14 +323,16 @@
 
                         <TextView
                             android:id="@+id/targetWordNum_tv4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/four"
                             android:textColor="@android:color/white"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@+id/tv4"
-                            app:layout_constraintStart_toStartOf="@+id/tv4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv4"
                             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -330,7 +354,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
@@ -342,7 +366,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl5"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="@drawable/numbers_ripple_bg">
 
@@ -362,14 +386,16 @@
 
                         <TextView
                             android:id="@+id/targetWordNum_tv5"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/five"
                             android:textColor="@android:color/white"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@+id/tv5"
-                            app:layout_constraintStart_toStartOf="@+id/tv5"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv5"
                             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -379,6 +405,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:src="@drawable/ic_baseline_volume_up"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
@@ -390,7 +417,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
@@ -402,7 +429,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl6"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="@drawable/numbers_ripple_bg">
 
@@ -422,14 +449,16 @@
 
                         <TextView
                             android:id="@+id/targetWordNum_tv6"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/six"
                             android:textColor="@android:color/white"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@+id/tv6"
-                            app:layout_constraintStart_toStartOf="@+id/tv6"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv6"
                             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -439,6 +468,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:src="@drawable/ic_baseline_volume_up"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
@@ -453,8 +483,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -462,7 +492,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
@@ -474,7 +504,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl7"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="@drawable/numbers_ripple_bg">
 
@@ -494,14 +524,16 @@
 
                         <TextView
                             android:id="@+id/targetWordNum_tv7"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/seven"
                             android:textColor="@android:color/white"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@+id/tv7"
-                            app:layout_constraintStart_toStartOf="@+id/tv7"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv7"
                             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -511,6 +543,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:src="@drawable/ic_baseline_volume_up"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
@@ -522,7 +555,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
@@ -534,7 +567,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl8"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="@drawable/numbers_ripple_bg">
 
@@ -554,14 +587,16 @@
 
                         <TextView
                             android:id="@+id/targetWordNum_tv8"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/eight"
                             android:textColor="@android:color/white"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@+id/tv8"
-                            app:layout_constraintStart_toStartOf="@+id/tv8"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv8"
                             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -571,6 +606,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:src="@drawable/ic_baseline_volume_up"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
@@ -582,7 +618,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="10dp"
@@ -594,7 +630,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl9"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:background="@drawable/numbers_ripple_bg">
 
@@ -614,14 +650,16 @@
 
                         <TextView
                             android:id="@+id/targetWordNum_tv9"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/nine"
                             android:textColor="@android:color/white"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="@+id/tv9"
-                            app:layout_constraintStart_toStartOf="@+id/tv9"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tv9"
                             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -631,6 +669,7 @@
                             android:layout_height="40dp"
                             android:gravity="center"
                             android:src="@drawable/ic_baseline_volume_up"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"

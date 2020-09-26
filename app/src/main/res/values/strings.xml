@@ -1,17 +1,16 @@
 <resources>
-    <string name="app_name">DigitsLearning</string>
+    <string name="app_name">Learn Numbers All Major Languages</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     //original ids
-    <string name="app_id">ca-app-pub-6736019070743734~5041772297</string>
-    <!--    <string name="banner">ca-app-pub-6736019070743734/2415608957</string>-->
-    <!--    <string name="interstitial">ca-app-pub-6736019070743734/4850200609</string>-->
+    <string name="app_id">ca-app-pub-6736019070743734~7242771094</string>
+    <string name="banner">ca-app-pub-6736019070743734/1990444419</string>
+    <string name="interstitial">ca-app-pub-6736019070743734/9677362743</string>
 
     //test ids
-    <string name="banner">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="interstitial">ca-app-pub-3940256099942544/1033173712</string>
-
+<!--        <string name="banner">ca-app-pub-3940256099942544/6300978111</string>-->
+<!--        <string name="interstitial">ca-app-pub-3940256099942544/1033173712</string>-->
 
     <string name="one_to_nine">1-9</string>
     <string name="one_to_hundred">1-100</string>
@@ -43,7 +42,7 @@
     <string name="million_n">1000000</string>
     <string name="billion_n">1000000000</string>
     <string name="trillion_n">1000000000000</string>
-    >
+
 
     <string name="one">One</string>
     <string name="two">Two</string>
@@ -64,9 +63,10 @@
     <string name="number">Number:</string>
 
 
-    <string name="info_about"> In this application you will able to check application updates,check android OS for update and see the usage of application. This app helps you to uninstall the application present in your phone. This app shows the RAM info. </string>
+    <string name="info_about">In this application you will able to learn digit in different languages. This app helps you to learn numbers in right side writing direction languages(Arabic,Persian,Pakhtu and Urdu).</string>
 
-    <string name="permission_texts">This application never ask for any permissions to perform its actions. (Digit Learning with Voice) helps user in Learning Digits in different languages with voice for each digits and numbers.We insure you that the user personal data or information is not collected by the company nor does the application host users data</string>
+    <string name="permission_texts">This application requires no permissions to perform its actions. (Learn Numbers All Major Languages) helps user in Learning Digits in different languages with voice for each digits and numbers.We insure you that the user personal data or information is not collected by the company nor does the application host users data</string>
     <string name="exit_text">Are you sure you want to\n exit?</string>
+    <string name="thanks_and_feedback">Thanks for using our app for further suggestion to add language please give us your feedback send us email at(aquatrixtechnologies.inc@gmail.com).</string>
 
 </resources>

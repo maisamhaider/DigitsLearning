@@ -21,7 +21,7 @@
             android:layout_height="wrap_content">
 
            <ImageView
-               android:src="@drawable/ic_launcher_background"
+               android:src="@drawable/ic_languages_translator_final"
                android:layout_width="60dp"
                android:layout_height="60dp"/>
         </LinearLayout>

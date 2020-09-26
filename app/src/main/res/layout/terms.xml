@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp"
-        android:src="@drawable/ic_launcher_background" />
+        android:src="@drawable/ic_languages_translator_final" />
 
     <TextView
         android:id="@+id/tAndC"
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/white_curved_ripple"
+            android:background="@drawable/flat_button_black_ripple_bg"
             android:text="close"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView12"
@@ -84,7 +84,7 @@
             android:layout_alignParentEnd="true"
             android:layout_gravity="right"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/white_curved_ripple"
+            android:background="@drawable/flat_button_black_ripple_bg"
             android:text="Ok"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

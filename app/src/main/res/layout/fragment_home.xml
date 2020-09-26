@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimaryDark"
-     tools:context=".fragments.HomeFragment">
+     tools:context="com.learn.numbers.all.major.languages_2020.fragments.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
@@ -52,12 +52,14 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/homeFrag_adView"
+        android:layout_height="0dp"
+         app:layout_constraintBottom_toTopOf="@+id/homeFrag_adView"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:layout_gravity="center"
+
             android:layout_height="wrap_content">
 
 
@@ -242,13 +244,13 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
     <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/homeFrag_adView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner"
+        app:adSize="BANNER"
+        app:adUnitId="@string/banner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

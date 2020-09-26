@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:icon="@drawable/selector_home"
+        android:icon="@drawable/ic_home"
         android:id="@+id/home_item"
         android:title="Home"/>
     <item
-        android:icon="@drawable/selector_counting"
+        android:icon="@drawable/ic_counting"
         android:id="@+id/report_item"
         android:title="Counting"/>
     <item
 
-        android:icon="@drawable/selector_settings"
+        android:icon="@drawable/ic_settings"
         android:id="@+id/settings_item"
         android:title="More"/>
 </menu>

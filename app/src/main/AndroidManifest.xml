@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.digitslearning">
+    package="com.learn.numbers.all.major.languages_2020">
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_langusage_translator_final"
+        android:icon="@drawable/ic_languages_translator_final"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_langusage_translator_final"
+        android:roundIcon="@drawable/ic_languages_translator_final"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SplashActivity">
+        <activity android:name="com.learn.numbers.all.major.languages_2020.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ExtraLanguagesNumActivity" />
-        <activity android:name=".activities.CustomNumbersActivity" />
-        <activity android:name=".activities.SpecialNumbersActivity" />
-        <activity android:name=".activities.NumbersActivity" />
-        <activity android:name=".activities.MainActivity"/>
+        <activity android:name="com.learn.numbers.all.major.languages_2020.activities.ExtraLanguagesNumActivity" />
+        <activity android:name="com.learn.numbers.all.major.languages_2020.activities.CustomNumbersActivity" />
+        <activity android:name="com.learn.numbers.all.major.languages_2020.activities.SpecialNumbersActivity" />
+        <activity android:name="com.learn.numbers.all.major.languages_2020.activities.NumbersActivity" />
+        <activity android:name="com.learn.numbers.all.major.languages_2020.activities.MainActivity"/>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

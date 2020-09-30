@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.learn.numbers.all.major.languages_2020">
 
@@ -12,7 +12,6 @@
         <activity android:name="com.learn.numbers.all.major.languages_2020.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -20,8 +19,7 @@
         <activity android:name="com.learn.numbers.all.major.languages_2020.activities.CustomNumbersActivity" />
         <activity android:name="com.learn.numbers.all.major.languages_2020.activities.SpecialNumbersActivity" />
         <activity android:name="com.learn.numbers.all.major.languages_2020.activities.NumbersActivity" />
-        <activity android:name="com.learn.numbers.all.major.languages_2020.activities.MainActivity"/>
-
+        <activity android:name="com.learn.numbers.all.major.languages_2020.activities.MainActivity" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/app_id" />

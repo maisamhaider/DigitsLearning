@@ -5,12 +5,12 @@
 
     //original ids
     <string name="app_id">ca-app-pub-6736019070743734~7242771094</string>
-    <string name="banner">ca-app-pub-6736019070743734/1990444419</string>
-    <string name="interstitial">ca-app-pub-6736019070743734/9677362743</string>
+<!--    <string name="banner">ca-app-pub-6736019070743734/1990444419</string>-->
+<!--    <string name="interstitial">ca-app-pub-6736019070743734/9677362743</string>-->
 
     //test ids
-<!--        <string name="banner">ca-app-pub-3940256099942544/6300978111</string>-->
-<!--        <string name="interstitial">ca-app-pub-3940256099942544/1033173712</string>-->
+        <string name="banner">ca-app-pub-3940256099942544/6300978111</string>
+        <string name="interstitial">ca-app-pub-3940256099942544/1033173712</string>
 
     <string name="one_to_nine">1-9</string>
     <string name="one_to_hundred">1-100</string>
